@@ -52,7 +52,7 @@ const categoryIcon = {
   flags: props => <Icon name="flag" {...props} />
 };
 
-const { width: WINDOW_WIDTH } = Dimensions.get("window");
+const { width: WINDOW_WIDTH } = Dimensions.get("screen");
 
 const ViewTypes = {
   EMOJI: 0,
