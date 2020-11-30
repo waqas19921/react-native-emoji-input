@@ -6,9 +6,9 @@ import {
   TextInput,
   Dimensions,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  AsyncStorage
+  TouchableWithoutFeedback
 } from "react-native";
+import AsyncStorage from '@react-native-community/async-storage'
 import {
   RecyclerListView,
   DataProvider,
