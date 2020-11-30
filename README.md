@@ -28,28 +28,30 @@ npx babel-node scripts/compile.js
 
 ## Optional Props
 
-| Prop                               | Description                                                                         | type          | default value  |
-| ---------------------------------- | ----------------------------------------------------------------------------------- | ------------- | -------------- |
-| `keyboardBackgroundColor`          | Set the background color of the main keyboard pane                                  | string        | '#E3E1EC'      |
-| `categoryUnhighlightedColor`       | Set the default color of the category icons                                         | string        | 'lightgray'    |
-| `categoryHighlightColor`           | Set the color of a higlighted category icon                                         | string        | 'black'        |
-| `width`                            | Width of the keyboard, number in px                                                 | number        | window width   |
-| `numColumns`                       | Number of emoji columns to display                                                  | number        | 6              |
-| `categoryLabelHeight`              | The height of category title                                                        | number        | 40             |
-| `categoryLabelTextStyle`           | The text size of the category title                                                 | object        | {fontSize: 25} |
-| `emojiFontSize`                    | The default size of the emojis                                                      | number        | 40             |
-| `categoryFontSize`                 | The default size of the category icons                                              | number        | 40             |
-| `numFrequentlyUsedEmoji`           | Max number of frequently used emojis in the section                                 | number        | 18             |
-| `showCategoryTab`                  | Whether the categories should be shown or not                                       | boolean       | true           |
-| `enableSearch`                     | Whether the search bar should be shown or not                                       | boolean       | true           |
-| `showCategoryTitleInSearchResults` | Whether the search title should be shown or not in search results                   | boolean       | false          |
-| `enableFrequentlyUsedEmoji`        | Whether the frequently used category should be shown or not                         | boolean       | true           |
-| `defaultFrequentlyUsedEmoji`       | An array of keys for emojis that will always render in the frequently used category | Array(string) | []             |
-| `resetSearch`                      | Pass this in if you want to clear the the search                                    | boolean       | false          |
-| `loggingFunction`                  | Logging function to be called when applicable.\*                                    | function      | none           |
-| `verboseLoggingFunction`           | Same as loggingFunction but also provides strategy used to determine failed search  | boolean       | false          |
-| `filterFunctions`                  | Array of functions that are used to limit which emojis should be rendered. Each of this function will be invoked with single parameter being `emoji` data and if every function returns `true` for `emoji` then this emoji will be included and displayed.| Array(function) | []  |
-| `renderAheadOffset`                | Specify how many pixels in advance you want views to be rendered. Increasing this value can help reduce blanks (if any). However, making this low can improve performance if you're having issues with it (see [#36](https://github.com/sskhandek/react-native-emoji-input/issues/36)). Higher values also increase re-render compute | number | 1500  |
+| Prop                               | Description                                                                                                                                                                                                                                                                                                                           | type            | default value           |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------------------- |
+| `keyboardBackgroundColor`          | Set the background color of the main keyboard pane                                                                                                                                                                                                                                                                                    | string          | '#E3E1EC'               |
+| `categoryContainerStyle`           | The styles of the category container                                                                                                                                                                                                                                                                                                  | object          | { paddingVertical: 15 } |
+| `categoryUnhighlightedColor`       | Set the default color of the category icons                                                                                                                                                                                                                                                                                           | string          | 'lightgray'             |
+| `categoryHighlightColor`           | Set the color of a higlighted category icon                                                                                                                                                                                                                                                                                           | string          | 'black'                 |
+| `width`                            | Width of the keyboard, number in px                                                                                                                                                                                                                                                                                                   | number          | window width            |
+| `numColumns`                       | Number of emoji columns to display                                                                                                                                                                                                                                                                                                    | number          | 6                       |
+| `categoryLabelHeight`              | The height of category title                                                                                                                                                                                                                                                                                                          | number          | 40                      |
+| `categoryLabelTextStyle`           | The text size of the category title                                                                                                                                                                                                                                                                                                   | object          | {fontSize: 25}          |
+| `emojiFontSize`                    | The default size of the emojis                                                                                                                                                                                                                                                                                                        | number          | 40                      |
+| `categoryFontSize`                 | The default size of the category icons                                                                                                                                                                                                                                                                                                | number          | 40                      |
+| `numFrequentlyUsedEmoji`           | Max number of frequently used emojis in the section                                                                                                                                                                                                                                                                                   | number          | 18                      |
+| `showCategoryTab`                  | Whether the categories should be shown or not                                                                                                                                                                                                                                                                                         | boolean         | true                    |
+| `enableSearch`                     | Whether the search bar should be shown or not                                                                                                                                                                                                                                                                                         | boolean         | true                    |
+| `showCategoryTitleInSearchResults` | Whether the search title should be shown or not in search results                                                                                                                                                                                                                                                                     | boolean         | false                   |
+| `enableFrequentlyUsedEmoji`        | Whether the frequently used category should be shown or not                                                                                                                                                                                                                                                                           | boolean         | true                    |
+| `defaultFrequentlyUsedEmoji`       | An array of keys for emojis that will always render in the frequently used category                                                                                                                                                                                                                                                   | Array(string)   | []                      |
+| `resetSearch`                      | Pass this in if you want to clear the the search                                                                                                                                                                                                                                                                                      | boolean         | false                   |
+| `loggingFunction`                  | Logging function to be called when applicable.\*                                                                                                                                                                                                                                                                                      | function        | none                    |
+| `verboseLoggingFunction`           | Same as loggingFunction but also provides strategy used to determine failed search                                                                                                                                                                                                                                                    | boolean         | false                   |
+| `filterFunctions`                  | Array of functions that are used to limit which emojis should be rendered. Each of this function will be invoked with single parameter being `emoji` data and if every function returns `true` for `emoji` then this emoji will be included and displayed.                                                                            | Array(function) | []                      |
+| `renderAheadOffset`                | Specify how many pixels in advance you want views to be rendered. Increasing this value can help reduce blanks (if any). However, making this low can improve performance if you're having issues with it (see [#36](https://github.com/sskhandek/react-native-emoji-input/issues/36)). Higher values also increase re-render compute | number          | 1500                    |
+
 > \* When the search function yields this function is called. Additionally when the user clears the query box this function is called with the previous longest query since the last time the query box was empty. By default the function is called with one parameter, a string representing the query. If the verbose logging function parameter is set to true the function is called with a second parameter that is a string specifying why the function was called (either 'emptySearchResult' or 'longestPreviousQuery').
 
 ## Usage
@@ -80,12 +82,14 @@ php build_map.php
 ```
 
 Then copy the `emoji-data/emoji.json` to `src/emoji-data/emoji-data.json` and make sure the entry point is point to this json file.
+
 ```javascript
 // src/emoji-data/index.js
-import emoji from './emoji-data.json';
+import emoji from "./emoji-data.json";
 ```
 
 Finally compile the data file that used in the keyboard.
+
 ```shell
 node-babel ./scripts/compile.js
 ```
@@ -94,14 +98,15 @@ node-babel ./scripts/compile.js
 
 So why Emojis are displayed as `X` / other characters insetad of actual Emojis for some of your users?  
 That is because this library renders Emojis based on Font and Font need to support Emoji character in order to render it. And those fonts are updated with every system release, but because there is a lot of Android device manufacturers who are actually using Android as a base to come up with their own UI layer then it is harder for them to keep up with system updates.  
-You can read more about it here [Emojipedia article link](https://blog.emojipedia.org/androids-emoji-problem/)  
+You can read more about it here [Emojipedia article link](https://blog.emojipedia.org/androids-emoji-problem/)
 
 So what can you do?  
 Apps such as `Slack` / `WhatsApp` are actually providing Emojis as little images so that they can be render regardless of operating system on mobile phone. The problem in `React-Native` is that there is no support for placing images in `Input` element at time of writing this.  
-Other solution is to limit number of possible emojis to most basic ones which are supported on most devices. Choosing emojis from `Unicode 6.0` seems like solid solution: [Unicode 6.0 Emojis List](https://emojipedia.org/unicode-6.0/) - you get tons of Emojis that are most likely to be correctly rendered across most of the devices.  
+Other solution is to limit number of possible emojis to most basic ones which are supported on most devices. Choosing emojis from `Unicode 6.0` seems like solid solution: [Unicode 6.0 Emojis List](https://emojipedia.org/unicode-6.0/) - you get tons of Emojis that are most likely to be correctly rendered across most of the devices.
 
 In `React-Native-Emoji-Input` you can limit emojis displayed by using `filterFunctions` prop and passing array of functions. Each of this function takes `emoji` as an single parameter and if every function passed in `filterFunctions` prop returns `true` then emoji will be included in final list.  
-We can use that to show only emojis which are part of `Unicode 6.0` or `Unicode 6.1` like so:  
+We can use that to show only emojis which are part of `Unicode 6.0` or `Unicode 6.1` like so:
+
 ```
 	filterFunctionByUnicode = emoji => {
 		return emoji.lib.added_in === "6.0" || emoji.lib.added_in === "6.1"
@@ -116,4 +121,5 @@ We can use that to show only emojis which are part of `Unicode 6.0` or `Unicode 
 		filterFunctions={[this.filterFunctionByUnicode]}
 	/>
 ```
+
 This will render only emojis from Unicode 6.0 and Unicode 6.1 in input.
